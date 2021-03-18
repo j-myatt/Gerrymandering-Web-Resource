@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        
+        <title>Gerrymandering Web Resource</title>
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">  
+        <!--put your external stylesheet links here-->
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+
+    <body>
+         <!--put your initial page content here-->
+        <ul class="top-list">
+            <li class="button"><a href="#il-title">Illinois</a></li>
+            <li class="button"><a href="#md-title">Maryland</a></li>
+            <li class="button"><a href="#nc-title">North Carolina</a></li>
+            <li class="button"><a href="#oh-title">Ohio</a></li>
+            <li class="button"><a href="#wi-title">Wisconsin</a></li>
+        </ul>
+        
+        <h1 class="main-title">What is Gerrymandering and How Does it Affect Me?</h1>    
+
+        <p class="edu-paragraph">What is gerrymandering and how does it affect me? Before answering that, let's define redistribution. Redistribution involves adding, removing, or changing political boundaries in response to population changes (<a class="source" href="https://aceproject.org/ace-en/topics/bd/explore_topic_new" target="_blank">Source</a>). In 1965, the united States Congress passed the Voting Rights Act,establishing a set of standards of redistribution and redistricting, including redrawing districts of roughly equal population upon completion of the decennial Census. Under the Reserved Powers clause in the Constitution, The United States reserves the power to redistrict to each state. States either task the State Legislature to redistrict with gubernatorial approval, a bipartisan redisticting comission, or independent bodies to redistrict while reserving the power to approve or veto the plans to the State Legislature (<a class="source" href="https://www.ncsl.org/research/redistricting/national-redistricting-seminar-agend-sept-2010.aspx" target="_blank">Source</a>). Despite rigorous standards, gerrymandering, the practice of manipulation the shapes of political districts to gain or maintain power in favor of a party or group, occurs. Gerrymandering occurs in many U.S. states and produces some unusually shaped districts, such as District 12 in North Carolina and District 3 in Maryland (see maps below). Gerrymandering can affect individual voters because the politicians who draw the lines study historical voting results and trends to hand pick which geographic areas vote for them. On one hand, gerrymandering can tilt the results of an election in one party's favor that did not deserve it. On the other hand, gerrymandering can ensure that each party occupies the number of seats proportional with the proportion of votes they receive on a statewide level. Gerrymandering is executed in different ways. Two common methods are found below. Please scroll down or left click a state's button at the top as many times as needed to jump to a map.</p>
+        
+        <img class="gif" src="img/example_1.gif" align="left">
+        <img class="gif" src="img/example_2.gif" align="left">
+        
+        <p class="example-text" align="left">In the first example, the red party gains an additional seat. In the second example, the blue party wins every seat.</p> 
+        
+        <p class="instruction-text">For the maps below, five states with unusual district shapes were selected. The four buttons on the top of the map panes represent the year of the district shapes. Click each year's button to view the change in shape over time. Some of the unusual districts were gerrymandered and may have changed party as a result. The blue states were represented by a Democrat and red states were represented by a Republican in the U.S. House of Representatives. Click on a district to see its district number. </p>
+        
+        <h1 id="il-title">Illinois</h1>
+
+        <div id="il-map">
+            <button id="il-button-1985">1985</button>
+            <button id="il-button-1995">1995</button>
+            <button id="il-button-2005">2005</button>
+            <button id="il-button-2015">2015</button>
+        </div>
+        
+        <h1 id="md-title">Maryland</h1>
+        
+        <div id="md-map">
+            <button id="md-button-1985">1985</button>
+            <button id="md-button-1995">1995</button>
+            <button id="md-button-2005">2005</button>
+            <button id="md-button-2015">2015</button>
+        </div> 
+        
+        <h1 id="nc-title">North Carolina</h1>
+        
+        <div id="nc-map">
+            <button id="nc-button-1985">1985</button>
+            <button id="nc-button-1995">1995</button>
+            <button id="nc-button-2005">2005</button>
+            <button id="nc-button-2015">2015</button>
+        </div>        
+        
+        <h1 id="oh-title">Ohio</h1>
+        
+        <div id="oh-map">
+            <button id="oh-button-1985">1985</button>
+            <button id="oh-button-1995">1995</button>
+            <button id="oh-button-2005">2005</button>
+            <button id="oh-button-2015">2015</button>
+        </div>
+        
+        <h1 id="wi-title">Wisconsin</h1>        
+        
+        <div id="wi-map">
+            <button id="wi-button-1985">1985</button>
+            <button id="wi-button-1995">1995</button>
+            <button id="wi-button-2005">2005</button>
+            <button id="wi-button-2015">2015</button>
+        </div> 
+        
+        <p class="credit" align="center">Created by Jackson Myatt, 2021</p>
+        
+        <ul class="bottom-list">
+        </ul>
+        
+        <a class="more-information" href="https://en.wikipedia.org/wiki/2020_United_States_redistricting_cycle" target="_blank">More Information</a>
+        <a class="draw-your-own-districts" href="https://districtr.org/" target="_blank">Draw Your Own Districts</a>
+        <a class="data-source" href="http://cdmaps.polisci.ucla.edu/" target="_blank">Data Source</a>
+        <a class="my-linkedin" href="https://www.linkedin.com/in/jackson-myatt-1165ab11a/" target="_blank">My LinkedIn</a>
+        <a class="my-portfolio" href="https://j-myatt.github.io/Jackson-Myatt/portfolio.html" target="_blank">My Portfolio</a>
+        <a class="email-me" href="mailto:jacksonmyatt@comcast.net" target="_blank">Email Me</a>
+        
+        <!--put your external script links here-->
+        <script type="text/javascript" src="lib/jquery.js"></script>
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+        <script src="https://libs.cartocdn.com/carto.js/v4.2.0/carto.min.js"></script>
+        <script src="https://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+        <script src="js/illinois.min.js"></script>
+        <script src="js/maryland.min.js"></script>
+        <script src="js/ohio.min.js"></script>
+        <script src="js/northcarolina.min.js"></script>
+        <script src="js/wisconsin.min.js"></script>
+
+    </body>
+</html>

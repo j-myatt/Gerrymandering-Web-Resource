@@ -1,0 +1,240 @@
+var L;
+var $;
+var carto;
+
+// create map
+var wi_map = L.map('wi-map', {
+    center: [44.9, -90.13],
+    zoom: 7,
+    maxBounds: [[30, -110], [60, -70]]
+});
+
+// point to CARTO voyager basemap and restrict zoom
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', {
+    minZoom: 7,
+    maxZoom: 18
+}).addTo(wi_map);
+
+// create client variable to authorize CARTO functionality
+var client = new carto.Client({
+    apiKey: '8f2d374ce43b897835ad9ffa471e3a30a9ec603a',
+    username: 'jmyatt2'
+});
+
+//popup on click with select attribute data
+function onEachFeature(feature, layer) {
+    //no property named popupContent; instead, create html string with all properties
+    var popupContent = "";
+    
+    popupContent += "District " + feature.properties.DISTRICT + "<br>";
+    
+    layer.bindPopup(popupContent);
+    
+    layer.on({
+    mouseover: highlightFeature,
+    mouseout: resetHighlight
+    //click: zoomToFeature
+    });
+};
+
+//add events listener
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 2,
+        outline: "yellow",
+        fillOpacity: 0
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+}
+
+function resetHighlight(e) {
+    var layer = e.target;
+    
+    layer.setStyle({
+        fill: "white",
+        color: "white",
+        weight: 0.5,
+        opacity: 1,
+        fillOpacity: 0.2
+    });
+}
+
+
+function zoomToFeature(e) {
+    wi_map.fitBounds(e.target.getBounds());
+}
+
+
+var promise = $.getJSON("data/Wisconsin.geojson");
+promise.then(function(data) {
+    
+    var blue_districts_1985 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 19850;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#01AFFA",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+    
+    var red_districts_1985 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 19851;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#F51B38",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+    
+        var blue_districts_1995 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 19950;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#01AFFA",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+
+        var red_districts_1995 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 19951;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#F51B38",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });    
+    
+        var blue_districts_2005 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 20050;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#01AFFA",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+
+        var red_districts_2005 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 20051;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#F51B38",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });    
+    
+    var blue_districts_2015 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 20150;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#01AFFA",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+    
+    var red_districts_2015 = L.geoJson(data, {
+        filter: function(feature, layer) {
+            return feature.properties.Code == 20151;
+        },
+        onEachFeature: onEachFeature,
+        style: {
+            "fillColor": "#F51B38",
+            "color": "white",
+            "weight": 0.5,
+            "opacity": 1
+        }
+    });
+    
+     $('#wi-button-1985').click(function() {
+        wi_map.addLayer(blue_districts_1985);
+        wi_map.addLayer(red_districts_1985);
+        wi_map.removeLayer(blue_districts_1995);
+        wi_map.removeLayer(red_districts_1995);
+        wi_map.removeLayer(blue_districts_2005);
+        wi_map.removeLayer(red_districts_2005);
+        wi_map.removeLayer(blue_districts_2015);
+        wi_map.removeLayer(red_districts_2015);
+        $('#wi-button-1985').css('border', '5px solid red');
+        $('#wi-button-1995').css('border', '5px solid lightgray');
+        $('#wi-button-2005').css('border', '5px solid lightgray');
+        $('#wi-button-2015').css('border', '5px solid lightgray');
+    });
+
+    $('#wi-button-1995').click(function() {
+        wi_map.addLayer(blue_districts_1995);
+        wi_map.addLayer(red_districts_1995);
+        wi_map.removeLayer(blue_districts_1985);
+        wi_map.removeLayer(red_districts_1985);
+        wi_map.removeLayer(blue_districts_2005);
+        wi_map.removeLayer(red_districts_2005);
+        wi_map.removeLayer(blue_districts_2015);
+        wi_map.removeLayer(red_districts_2015);
+        $('#wi-button-1985').css('border', '5px solid lightgray');
+        $('#wi-button-1995').css('border', '5px solid red');
+        $('#wi-button-2005').css('border', '5px solid lightgray');
+        $('#wi-button-2015').css('border', '5px solid lightgray');
+    });
+    
+    $('#wi-button-2005').click(function() {
+        wi_map.addLayer(blue_districts_2005);
+        wi_map.addLayer(red_districts_2005);
+        wi_map.removeLayer(blue_districts_1985);
+        wi_map.removeLayer(red_districts_1985);
+        wi_map.removeLayer(blue_districts_1995);
+        wi_map.removeLayer(red_districts_1995);
+        wi_map.removeLayer(blue_districts_2015);
+        wi_map.removeLayer(red_districts_2015);
+        $('#wi-button-1985').css('border', '5px solid lightgray');
+        $('#wi-button-1995').css('border', '5px solid lightgray');
+        $('#wi-button-2005').css('border', '5px solid red');
+        $('#wi-button-2015').css('border', '5px solid lightgray');
+    });
+    
+    $('#wi-button-2015').click(function() {
+        wi_map.addLayer(blue_districts_2015);
+        wi_map.addLayer(red_districts_2015);
+        wi_map.removeLayer(blue_districts_1985);
+        wi_map.removeLayer(red_districts_1985);
+        wi_map.removeLayer(blue_districts_1995);
+        wi_map.removeLayer(red_districts_1995);
+        wi_map.removeLayer(blue_districts_2005);
+        wi_map.removeLayer(red_districts_2005);
+        $('#wi-button-1985').css('border', '5px solid lightgray');
+        $('#wi-button-1995').css('border', '5px solid lightgray');
+        $('#wi-button-2005').css('border', '5px solid lightgray');
+        $('#wi-button-2015').css('border', '5px solid red');
+    });    
+    
+});
