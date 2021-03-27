@@ -65,7 +65,7 @@ a {
 
 #il-title {
     position: absolute;
-    top: 1700px;
+    top: 225%;
     left: 46.5%;
 }
 
@@ -73,7 +73,7 @@ a {
     position: absolute;
     height: 85%;
     width: 100%;
-    top: 1800px;
+    top: 235%;
 }
 
 #il-button-1985 {
@@ -134,7 +134,7 @@ a {
 
 #md-title {
     position: absolute;
-    top: 2475px;
+    top: 330%;
     left: 44.5%;
 }
 
@@ -142,7 +142,7 @@ a {
     position: absolute;
     height: 85%;
     width: 100%;
-    top: 2575px;
+    top: 340%;
 }
 
 #md-button-1985 {
@@ -203,7 +203,7 @@ a {
 
 #nc-title {
     position: absolute;
-    top: 3250px;
+    top: 435%;
     left: 41.7%;
 }
 
@@ -211,7 +211,7 @@ a {
     position: absolute;
     height: 85%;
     width: 100%;
-    top: 3350px;
+    top: 445%;
 }
 
 #nc-button-1985 {
@@ -272,7 +272,7 @@ a {
 
 #oh-title {
     position: absolute;
-    top: 4025px;
+    top: 540%;
     left: 47.5%;
 }
 
@@ -280,7 +280,7 @@ a {
     position: absolute;
     height: 85%;
     width: 100%;
-    top: 4125px;
+    top: 550%;
 }
 
 #oh-button-1985 {
@@ -341,7 +341,7 @@ a {
 
 #wi-title {
     position: absolute;
-    top: 4800px;
+    top: 645%;
     left: 44.7%;
 }
 
@@ -349,7 +349,7 @@ a {
     position: absolute;
     height: 85%;
     width: 100%;
-    top: 4900px;
+    top: 655%;
 }
 
 #wi-button-1985 {
@@ -410,7 +410,7 @@ a {
 
 .credit {
     position: absolute;
-    top: 5535px;
+    top: 740%;
     left: 42%;
     color: white;
     padding: 10px;
@@ -419,18 +419,18 @@ a {
 
 .bottom-list {
     position: absolute;
-    top: 5610px;
+    top: 750%;
     text-align: center;
     background-color: gray; 
     color: white;
     height: 140px;
-    width: 97.3%;
+    width: 97%;
     z-index: 20000;
 }
 
 .more-information {
     position: absolute;
-    top: 5650px;
+    top: 755%;
     left: 200px;
     color: white;
     z-index: 20000;
@@ -439,7 +439,7 @@ a {
 
 .draw-your-own-districts {
     position: absolute;
-    top: 5650px;
+    top: 755%;
     left: 42.5%;
     color: white;
     z-index: 20000;
@@ -448,7 +448,7 @@ a {
 
 .data-source {
     position: absolute;
-    top: 5650px;
+    top: 755%;
     right: 200px;
     color: white;
     z-index: 20000;
@@ -457,7 +457,7 @@ a {
 
 .my-linkedin {
     position: absolute;
-    top: 5700px;
+    top: 760%;
     left: 230px;
     color: white;
     z-index: 20000;
@@ -466,7 +466,7 @@ a {
 
 .my-portfolio {
     position: absolute;
-    top: 5700px;
+    top: 760%;
     left: 47.75%;
     color: white;
     z-index: 20000;
@@ -475,9 +475,10 @@ a {
 
 .email-me {
     position: absolute;
-    top: 5700px;
+    top: 760%;
     right: 210px;
     color: white;
     z-index: 20000;
     font-size: 30px;
 }
+
